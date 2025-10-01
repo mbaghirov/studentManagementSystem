@@ -24,26 +24,13 @@ public class Main {
       choice = sc.nextInt();
 
       switch (choice) {
-        case 1:
-          classRoom.addStudent();
-          break;
-        case 2:
-          classRoom.showStudents();
-          break;
-        case 3:
-          classRoom.searchStudent();
-          break;
-        case 4:
-          classRoom.deleteStudent();
-          break;
-        case 5:
-          classRoom.calculateAverage();
-          break;
-        case 0:
-          input.systemOutPrint("\nProgram exit");
-          break;
-        default:
-          input.systemOutPrint("\nPlease, correct choice!\n");
+        case 1 -> classRoom.addStudent();
+        case 2 -> classRoom.showStudents();
+        case 3 -> classRoom.searchStudent();
+        case 4 -> classRoom.deleteStudent();
+        case 5 -> classRoom.calculateAverage();
+        case 0 -> input.systemOutPrint("\nProgram exit");
+        default -> input.systemOutPrint("\nPlease, correct choice!\n");
       }
     } while (choice != 0);
   }

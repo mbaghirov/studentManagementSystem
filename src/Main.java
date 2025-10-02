@@ -11,7 +11,7 @@ public class Main {
     do {
       input.systemOutPrint(
           """
-                    ===== Student Management System =====
+                    \n===== Student Management System =====
                     1. Student add
                     2. Show students
                     3. Search student
@@ -29,8 +29,8 @@ public class Main {
         case 3 -> classRoom.searchStudent();
         case 4 -> classRoom.deleteStudent();
         case 5 -> classRoom.calculateAverage();
-        case 0 -> input.systemOutPrint("\nProgram exit");
-        default -> input.systemOutPrint("\nPlease, correct choice!\n");
+        case 0 -> System.err.println("\nProgram exit");
+        default -> System.err.println("\nPlease, correct choice!\n");
       }
     } while (choice != 0);
   }

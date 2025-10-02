@@ -26,7 +26,7 @@ public class ClassRoom {
       }
       input.showReturnToMenuText();
     } else {
-      input.systemOutPrint("The list is empty");
+      System.err.println("\nThe list is empty");
     }
   }
 
@@ -37,17 +37,20 @@ public class ClassRoom {
     boolean found = false;
 
     for (int i = 0; i < count; i++) {
+      if (students[i] == null) {
+        break;
+      }
       if (students[i].name.equalsIgnoreCase(searchName)) {
         students[i].displayInfo();
         found = true;
-        input.systemOutPrint("\nStudent found");
+        System.err.println("Student found");
         input.showReturnToMenuText();
         break;
       }
     }
 
     if (!found) {
-      input.systemOutPrint("\nStudent not found");
+      System.err.println("\nStudent not found");
     }
   }
 
@@ -62,21 +65,21 @@ public class ClassRoom {
         students[count - 1] = null;
         count--;
         found = true;
-        input.systemOutPrint("\nStudent delete");
+        System.err.println("\nStudent delete");
         input.showReturnToMenuText();
         break;
       }
     }
 
     if (!found) {
-      input.systemOutPrint("\nStudent not found");
+      System.err.println("\nStudent not found");
     }
   }
 
   /// Ortalama bali hesablama
   void calculateAverage() {
     if (count == 0) {
-      input.systemOutPrint("\nHesablamaq üçün tələbə yoxdur");
+      System.err.println("\nHesablamaq üçün tələbə yoxdur");
       return;
     }
 
